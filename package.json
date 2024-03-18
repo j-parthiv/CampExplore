@@ -1,0 +1,25 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "Welcome to AdventureBase - your go-to destination for discovering, creating, and reviewing campgrounds! Built with Node.js, Express, MongoDB, and Bootstrap, AdventureBase offers seamless authentication with Passport.js. Join the adventure today!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-parthiv/CampExplore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-parthiv/CampExplore/issues"
+  },
+  "homepage": "https://github.com/j-parthiv/CampExplore#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "mongoose": "^8.2.2"
+  }
+}
