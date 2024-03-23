@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const path = require("path");
-const Campground = require('./models/camground');
+const Campground = require("./models/camground");
 
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
@@ -22,11 +22,15 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get('/campground', async (req, res) => {
-    const camp =  new Campground({title: 'My Backyard', description: 'Cheap Camping'})
-    await camp.save();
-    res.send(camp)
-})
+app.get("/campgrounds", async (req, res) => {
+  const campgrounds = await Campground.find({});
+  res.render("campground/index", { campgrounds });
+});
+
+app.get("/campgrounds/:id", async (req, res) => {
+  const campground = await Campground.findById(req.params.id);
+  res.render("campground/show", { campground });
+});
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
