@@ -25,33 +25,6 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
-    <script>
-      (function () {
-        "use strict";
-        window.addEventListener(
-          "load",
-          function () {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName("validated-form");
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function (form) {
-              form.addEventListener(
-                "submit",
-                function (event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                  }
-                  form.classList.add("was-validated");
-                },
-                false
-              );
-            });
-          },
-          false
-        );
-      })();
-    </script>
-    
+    <script src="/javascripts/validateForms.js"></script>
   </body>
 </html>
