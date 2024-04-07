@@ -17,7 +17,7 @@
           type="text"
           id="title"
           name="campground[title]"
-          value="<%= campground.title %>"
+          value="<%=campground.title%>"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -71,12 +71,8 @@
           id="description"
           name="campground[description]"
           required
-        >
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-          <%=campground.description%></textarea
-        >
+        ><%=campground.description%></textarea>
+        <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
         <button class="btn btn-info">Update Campground</button>
