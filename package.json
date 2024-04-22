@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/j-parthiv/CampExplore#readme",
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.15.5",
     "axios": "^1.6.8",
     "cloudinary": "^1.41.3",
     "connect-flash": "^0.1.1",
