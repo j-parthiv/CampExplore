@@ -1,5 +1,8 @@
 (function () {
   "use strict";
+
+  bsCustomFileInput.init()
+
   window.addEventListener(
     "load",
     function () {
