@@ -7,6 +7,7 @@
       method="POST"
       novalidate
       class="validated-form"
+      enctype="multipart/form-data"
     >
       <div class="mb-3">
         <label class="form-label" for="title" value="<%= campground.title %>"
@@ -22,18 +23,7 @@
         />
         <div class="valid-feedback">Looks good!</div>
       </div>
-      <div class="mb-3">
-        <label class="form-label" for="image">Image Url</label>
-        <input
-          class="form-control"
-          type="text"
-          id="image"
-          name="campground[image]"
-          value="<%= campground.image %>"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-      </div>
+
       <div class="mb-3">
         <label class="form-label" for="price">Price</label>
         <div class="input-group">
@@ -71,8 +61,40 @@
           id="description"
           name="campground[description]"
           required
-        ><%=campground.description%></textarea>
+        >
+<%=campground.description%></textarea
+        >
         <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="mb-3 custom-file">
+        <label for="formFileMultiple" class="form-label custom-file-label"
+          >Add more images</label
+        >
+        <input
+          class="form-control"
+          type="file"
+          id="formFileMultiple"
+          name="image"
+          multiple
+        />
+      </div>
+      <div class="mb-3">
+        <% campground.images.forEach(function(img, i){ %>
+        <img
+          src="<%=img.thumbnail%>"
+          alt="campground image"
+          class="img-thumbnail"
+        />
+        <div class="form-check-inline">
+          <input
+            type="checkbox"
+            name="deleteImages[]"
+            value="<%=img.filename%>"
+            id="image-<%=i%>"
+          />
+          <label for="image-<%=i%>">Delete ?</label>
+        </div>
+        <% }) %>
       </div>
       <div class="mb-3">
         <button class="btn btn-info">Update Campground</button>
