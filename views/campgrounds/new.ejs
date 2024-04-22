@@ -18,11 +18,9 @@
           name="campground[title]"
           required
         />
-        <div class="valid-feedback">
-          Looks good!
-        </div>
+        <div class="valid-feedback">Looks good!</div>
       </div>
-      <input type="file" name="image" multiple>
+
       <!-- <div class="mb-3">
         <label class="form-label" for="image">Image Url</label>
         <input
@@ -49,9 +47,7 @@
             aria-describedby="basic-addon1"
             required
           />
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+          <div class="valid-feedback">Looks good!</div>
         </div>
       </div>
       <div class="mb-3">
@@ -63,9 +59,7 @@
           name="campground[location]"
           required
         />
-        <div class="valid-feedback">
-          Looks good!
-        </div>
+        <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="description">Description</label>
@@ -76,10 +70,21 @@
           name="campground[description]"
           required
         ></textarea>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
+        <div class="valid-feedback">Looks good!</div>
       </div>
+      <div class="mb-3 custom-file">
+        <label for="formFileMultiple" class="form-label custom-file-label"
+          >Upload Images</label
+        >
+        <input
+          class="form-control"
+          type="file"
+          id="formFileMultiple"
+          name="image"
+          multiple
+        />
+      </div>
+
       <div class="mb-3">
         <button class="btn btn-success">Add Campground</button>
       </div>
