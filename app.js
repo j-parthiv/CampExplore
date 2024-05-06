@@ -1,6 +1,8 @@
-if(process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
+
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -17,6 +19,7 @@ const User = require("./models/user");
 const userRoutes = require("./routes/users");
 const campgroundRoutes = require("./routes/campground");
 const reviewRoutes = require("./routes/reviews");
+const mongoSanitize = require("express-mongo-sanitize");
 
 const app = express();
 
@@ -35,6 +38,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
+app.use(
+  mongoSanitize({
+    replaceWith: "_",
+  })
+);
 
 const sessionConfig = {
   secret: "thisshouldbeabettersecret!",
@@ -42,6 +50,7 @@ const sessionConfig = {
   saveUninitialized: true,
   cookie: {
     httpOnly: true,
+    // secure: true,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
